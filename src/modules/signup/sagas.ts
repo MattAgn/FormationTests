@@ -15,7 +15,6 @@ function* subscribeNewsletterSaga(
     yield call(SignUpApi.subscribeNewsletter, { email });
     yield put(ToasterActions.showSuccessMessage('Email sent !'));
   } catch (err) {
-    console.log('coucou');
     yield put(ToasterActions.showErrorMessage('Oups something went wrong...'));
   }
 }
