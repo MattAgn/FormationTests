@@ -1,4 +1,4 @@
 import React from 'react';
-import { HomeBasic } from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 
-export const App = () => <HomeBasic />;
+export const App = () => <Home />;

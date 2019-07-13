@@ -3,8 +3,7 @@ import styled from 'styled-components/native';
 import { Button } from '../../components/Button';
 import { useDispatch } from 'react-redux';
 import { SignUpActions } from '../../modules/signup/actions';
-import { Formik, FormikProps } from 'formik';
-import { EmailValidationSchema } from '../../validation/emaiSchema';
+import { Formik } from 'formik';
 import { Input } from '../../components/Input';
 
 interface EmailValue {
@@ -24,9 +23,10 @@ export const HomeFinal = () => {
         initialValues={{ email: '' }}
         validateOnBlur={false}
         validateOnChange={false}
-        validationSchema={EmailValidationSchema}
-        render={({ handleSubmit }: FormikProps<EmailValue>) => (
+        render={({ handleSubmit }) => (
           <>
+            {/* 
+            //@ts-ignore */}
             <Input placeholder="Email" name="email" />
             <Button title="Validate" onPress={handleSubmit} />
           </>
@@ -38,7 +38,7 @@ export const HomeFinal = () => {
 
 const Container = styled.View`
   flex: 1;
-  padding-top: 30;
+  padding-top: 40;
   padding-horizontal: 20;
   align-items: center;
 `;

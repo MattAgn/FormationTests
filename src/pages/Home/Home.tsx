@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import wretch from 'wretch';
 import { Button } from '../../components/Button';
 
-export const HomeBasic = () => {
+export const Home = () => {
   const [email, setEmail] = useState('');
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 

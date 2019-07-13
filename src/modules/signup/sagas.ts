@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { ActionsOfType } from '@martin_hotell/rex-tils';
 
-import { SignUpApi } from '../../api/signUp';
+import { SignUpApi } from '../../api/signup';
 
 import { TSignUpActionObjectTypes } from './actions';
 import { SignUpActionTypes } from './types';
@@ -15,6 +15,7 @@ function* subscribeNewsletterSaga(
     yield call(SignUpApi.subscribeNewsletter, { email });
     yield put(ToasterActions.showSuccessMessage('Email sent !'));
   } catch (err) {
+    console.log('coucou');
     yield put(ToasterActions.showErrorMessage('Oups something went wrong...'));
   }
 }

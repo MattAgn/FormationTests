@@ -1,10 +1,12 @@
 import { applyMiddleware, createStore } from 'redux';
+
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 
 import { rootReducer } from './reducer';
+import watchAll from './saga';
 
 export const sagaMiddleware = createSagaMiddleware();
-export let store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
-export const persistor = persistStore(store);
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+
+sagaMiddleware.run(watchAll);

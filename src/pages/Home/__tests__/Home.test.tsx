@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, fireEvent, waitForElement } from 'react-native-testing-library';
-import { HomeBasic } from '../../Home/Home';
+import { fireEvent, waitForElement } from 'react-native-testing-library';
+import { HomeFinal } from '../Home.final';
 import fetchMock from 'fetch-mock';
+import { renderPage } from '../../../utils/setupTests';
 
 describe('[Page] Home', () => {
   beforeEach(() => {
@@ -11,7 +12,7 @@ describe('[Page] Home', () => {
   it('should display succesful message on successful subscribe', async () => {
     // Setup
     fetchMock.post('https://staging.inshallah.com/auth/send-validation-email', 200);
-    const { getByPlaceholder, queryByText, getByText } = render(<HomeBasic />);
+    const { getByPlaceholder, queryByText, getByText } = renderPage(<HomeFinal />);
     // What the user sees
     const EmailInput = getByPlaceholder('Email');
     const ValidateButton = getByText('Validate');
@@ -26,7 +27,7 @@ describe('[Page] Home', () => {
   it('should display error message on failed subscribe', async () => {
     // Setup
     fetchMock.post('https://staging.inshallah.com/auth/send-validation-email', 400);
-    const { getByPlaceholder, queryByText, getByText } = render(<HomeBasic />);
+    const { getByPlaceholder, queryByText, getByText } = renderPage(<HomeFinal />);
     // What the user sees
     const EmailInput = getByPlaceholder('Email');
     const ValidateButton = getByText('Validate');
