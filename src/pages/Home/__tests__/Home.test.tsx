@@ -13,7 +13,6 @@ describe('[Page] Home', () => {
   it('should display error message on failed subscribe', async () => {
     // Setup
     fetchMock.post('https://staging.inshallah.com/auth/send-validation-email', 400);
-
     const page = renderPage(<HomeFinal />);
     const { getByPlaceholder, queryByText, getByText } = page;
     // What the user sees

@@ -380,7 +380,7 @@ Array [
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "rgb(202,15,15)",
+          "backgroundColor": "rgb(12,209,167)",
           "paddingBottom": 15,
           "paddingLeft": 15,
           "paddingRight": 15,
@@ -397,7 +397,7 @@ Array [
           }
         }
       >
-        Oups something went wrong...
+        Email sent !
       </Text>
     </View>
   </View>,
