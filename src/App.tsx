@@ -1,6 +1,4 @@
 import React from 'react';
-import { HomeBasic } from './pages/HomeBasic/HomeBasic';
+import { HomeBasic } from './pages/Home/Home';
 
-const App = () => <HomeBasic />;
-
-export default App;
+export const App = () => <HomeBasic />;
