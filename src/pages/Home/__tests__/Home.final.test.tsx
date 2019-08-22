@@ -1,10 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
-import { fireEvent, waitForElement, render } from 'react-native-testing-library';
+import { fireEvent, waitForElement } from 'react-native-testing-library';
 import fetchMock from 'fetch-mock';
 
+import { HomeFinal } from '../Home.final';
+import { renderPage } from '../../../utils/setupTests';
 import { EMAIL_API_ENDPOINT } from '../../../api/config';
-import { Home } from '../Home';
 
 describe('[Page] Home', () => {
   beforeEach(() => {
@@ -14,7 +15,7 @@ describe('[Page] Home', () => {
   it('should display error message on failed subscribe', async () => {
     // Setup
     fetchMock.post(EMAIL_API_ENDPOINT, 400);
-    const page = render(<Home />);
+    const page = renderPage(<HomeFinal />);
     const { getByPlaceholder, queryByText, getByText } = page;
     // What the user sees
     const EmailInput = getByPlaceholder('Email');
@@ -31,15 +32,17 @@ describe('[Page] Home', () => {
   it('should display succesful message on successful subscribe', async () => {
     // Setup
     fetchMock.post(EMAIL_API_ENDPOINT, 200);
-    const { getByPlaceholder, queryByText, getByText } = render(<Home />);
+    const page = renderPage(<HomeFinal />);
+    const { getByPlaceholder, queryByText, getByText } = page;
     // What the user sees
     const EmailInput = getByPlaceholder('Email');
     const ValidateButton = getByText('Validate');
     // What the user does
     fireEvent.changeText(EmailInput, 'hello@bam.co');
     fireEvent.press(ValidateButton);
-    // What feedback the user should expect
+    // What feedback the user will see
     const SuccessMessage = await waitForElement(() => queryByText('Email sent !'));
+    expect(page).toMatchSnapshot();
     expect(SuccessMessage).toBeTruthy();
   });
 });
