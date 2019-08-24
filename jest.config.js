@@ -15,7 +15,7 @@ module.exports = {
   },
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   testPathIgnorePatterns: ['\\.snap$', '<rootDir>/node_modules/', '<rootDir>/.history/'],
-  coveragePathIgnorePatterns: ['src/pages/Shortcuts', 'src/components/CodePushUpdateButton'],
   cacheDirectory: '.jest/cache',
   transformIgnorePatterns: ['node_modules/@bam.tech/react-native-text-input'],
+  setupFiles: ['./src/utils/test.setup.tsx'],
 };
