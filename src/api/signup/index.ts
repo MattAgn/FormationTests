@@ -1,10 +1,14 @@
-import { BaseApi } from '../';
-import { IValidateEmailParams } from './types';
+import wretch from 'wretch';
+
 import { EMAIL_API_ENDPOINT } from '../config';
+
+interface IValidateEmailParams {
+  email: string;
+}
 
 export class SignUpApi {
   public static subscribeNewsletter(subscribeNewsletterParams: IValidateEmailParams) {
-    return BaseApi.baseCall()
+    return wretch()
       .url(EMAIL_API_ENDPOINT)
       .post(subscribeNewsletterParams)
       .res();

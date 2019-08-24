@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+
 import { Button } from '../../components/Button';
 import { useDispatch } from 'react-redux';
 import { SignUpActions } from '../../modules/signup/actions';
@@ -13,7 +14,6 @@ interface EmailValue {
 
 export const HomeFinal = () => {
   const dispatch = useDispatch();
-
   const onSubmit = ({ email }: EmailValue) => dispatch(SignUpActions.subscribeNewsletter(email));
 
   return (

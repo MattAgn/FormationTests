@@ -36,7 +36,7 @@ describe('[Page] Home', () => {
     // What the user does
     fireEvent.changeText(EmailInput, 'hellobam.co');
     fireEvent.press(ValidateButton);
-    // What feedback the user will see
+    // What feedback the user should expect
     const ErrorMessage = await waitForElement(() => queryByText(wording.basicError));
     expect(ErrorMessage).toBeTruthy();
   });
