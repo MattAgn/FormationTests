@@ -6,43 +6,40 @@ import fetchMock from 'fetch-mock';
 import { HomeFinal } from '../Home.final';
 import { renderPage } from '../../../utils/setupTests';
 import { EMAIL_API_ENDPOINT } from '../../../api/config';
+import { wording } from '../../../utils/wording';
 
 describe('[Page] Home', () => {
   beforeEach(() => {
     fetchMock.reset();
   });
 
-  it('should display error message on failed subscribe', async () => {
-    // Setup
-    fetchMock.post(EMAIL_API_ENDPOINT, 400);
-    const page = renderPage(<HomeFinal />);
-    const { getByPlaceholder, queryByText, getByText } = page;
-    // What the user sees
-    const EmailInput = getByPlaceholder('Email');
-    const ValidateButton = getByText('Validate');
-    // What the user does
-    fireEvent.changeText(EmailInput, 'hellobam.co');
-    fireEvent.press(ValidateButton);
-    // What feedback the user will see
-    const ErrorMessage = await waitForElement(() => queryByText('Oups something went wrong...'));
-    expect(page).toMatchSnapshot();
-    expect(ErrorMessage).toBeTruthy();
-  });
-
   it('should display succesful message on successful subscribe', async () => {
     // Setup
     fetchMock.post(EMAIL_API_ENDPOINT, 200);
-    const page = renderPage(<HomeFinal />);
-    const { getByPlaceholder, queryByText, getByText } = page;
+    const { getByPlaceholder, queryByText, getByText } = renderPage(<HomeFinal />);
     // What the user sees
-    const EmailInput = getByPlaceholder('Email');
-    const ValidateButton = getByText('Validate');
+    const EmailInput = getByPlaceholder(wording.emailPlaceholder);
+    const ValidateButton = getByText(wording.validateEmail);
     // What the user does
     fireEvent.changeText(EmailInput, 'hello@bam.co');
     fireEvent.press(ValidateButton);
     // What feedback the user will see
-    const SuccessMessage = await waitForElement(() => queryByText('Email sent !'));
-    expect(page).toMatchSnapshot();
+    const SuccessMessage = await waitForElement(() => queryByText(wording.emailSent));
     expect(SuccessMessage).toBeTruthy();
+  });
+
+  it('should display error message on failed subscribe', async () => {
+    // Setup
+    fetchMock.post(EMAIL_API_ENDPOINT, 400);
+    const { getByPlaceholder, queryByText, getByText } = renderPage(<HomeFinal />);
+    // What the user sees
+    const EmailInput = getByPlaceholder(wording.emailPlaceholder);
+    const ValidateButton = getByText(wording.validateEmail);
+    // What the user does
+    fireEvent.changeText(EmailInput, 'hellobam.co');
+    fireEvent.press(ValidateButton);
+    // What feedback the user will see
+    const ErrorMessage = await waitForElement(() => queryByText(wording.basicError));
+    expect(ErrorMessage).toBeTruthy();
   });
 });

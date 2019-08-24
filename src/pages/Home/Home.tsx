@@ -3,6 +3,8 @@ import { View, Text, TextInput } from 'react-native';
 import styled from 'styled-components/native';
 import wretch from 'wretch';
 import { Button } from '../../components/Button';
+import { wording } from '../../utils/wording';
+import { validate } from '@babel/types';
 
 export const Home = () => {
   const [email, setEmail] = useState('');
@@ -18,11 +20,11 @@ export const Home = () => {
 
   return (
     <Container>
-      <Title>Subscribe to our newsletter</Title>
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
-      <Button title="Validate" onPress={onValidate} />
-      {isSuccess && <SuccessMessage>Email sent !</SuccessMessage>}
-      {isSuccess === false && <ErrorMessage>Oups something went wrong...</ErrorMessage>}
+      <Title>{wording.subscribe}</Title>
+      <TextInput placeholder={wording.emailPlaceholder} value={email} onChangeText={setEmail} />
+      <Button title={wording.validateEmail} onPress={onValidate} />
+      {isSuccess && <SuccessMessage>{wording.emailSent}</SuccessMessage>}
+      {isSuccess === false && <ErrorMessage>{wording.basicError}</ErrorMessage>}
     </Container>
   );
 };

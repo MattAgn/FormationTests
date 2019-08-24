@@ -6,6 +6,7 @@ import { SignUpApi } from '../../api/signup';
 import { TSignUpActionObjectTypes } from './actions';
 import { SignUpActionTypes } from './types';
 import { ToasterActions } from '../toaster/actions';
+import { wording } from '../../utils/wording';
 
 function* subscribeNewsletterSaga(
   action: ActionsOfType<TSignUpActionObjectTypes, SignUpActionTypes.SUBSCRIBE_NEWSLETTER>
@@ -13,9 +14,9 @@ function* subscribeNewsletterSaga(
   try {
     const { email } = action.payload;
     yield call(SignUpApi.subscribeNewsletter, { email });
-    yield put(ToasterActions.showSuccessMessage('Email sent !'));
+    yield put(ToasterActions.showSuccessMessage(wording.emailSent));
   } catch (err) {
-    yield put(ToasterActions.showErrorMessage('Oups something went wrong...'));
+    yield put(ToasterActions.showErrorMessage(wording.basicError));
   }
 }
 

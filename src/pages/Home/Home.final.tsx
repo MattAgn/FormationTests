@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { SignUpActions } from '../../modules/signup/actions';
 import { Formik } from 'formik';
 import { Input } from '../../components/Input';
+import { wording } from '../../utils/wording';
 
 interface EmailValue {
   email: string;
@@ -17,7 +18,7 @@ export const HomeFinal = () => {
 
   return (
     <Container>
-      <Title>Subscribe to our newsletter</Title>
+      <Title>{wording.subscribe}</Title>
       <Formik
         onSubmit={onSubmit}
         initialValues={{ email: '' }}
@@ -27,8 +28,8 @@ export const HomeFinal = () => {
           <>
             {/* 
             //@ts-ignore */}
-            <Input placeholder="Email" name="email" />
-            <Button title="Validate" onPress={handleSubmit} />
+            <Input placeholder={wording.emailPlaceholder} name="email" />
+            <Button title={wording.validateEmail} onPress={handleSubmit} />
           </>
         )}
       />
