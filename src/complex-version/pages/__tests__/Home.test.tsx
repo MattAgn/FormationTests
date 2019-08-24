@@ -24,7 +24,7 @@ describe('[Page] Home', () => {
     fireEvent.changeText(EmailInput, 'hello@bam.co');
     fireEvent.press(ValidateButton);
     // What feedback the user should expect
-    const SuccessMessage = await waitForElement(() => queryByText(wording.emailSent));
+    const SuccessMessage = await waitForElement(() => queryByText(wording.subscriptionSuccessful));
     expect(SuccessMessage).toBeTruthy();
   });
 

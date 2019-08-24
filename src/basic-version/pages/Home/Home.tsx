@@ -25,7 +25,7 @@ export const Home = () => {
         <Title>{wording.subscribe}</Title>
         <Input placeholder={wording.emailPlaceholder} value={email} onChangeText={setEmail} />
         <Button title={wording.validateEmail} onPress={onValidate} />
-        {isSuccess && <SuccessMessage>{wording.emailSent}</SuccessMessage>}
+        {isSuccess && <SuccessMessage>{wording.subscriptionSuccessful}</SuccessMessage>}
         {isSuccess === false && <ErrorMessage>{wording.basicError}</ErrorMessage>}
       </Card>
     </Container>

@@ -2,6 +2,6 @@ export const wording = {
   subscribe: 'Subscribe to our newsletter !',
   emailPlaceholder: 'Email',
   validateEmail: 'Validate',
-  emailSent: 'Email sent !',
+  subscriptionSuccess: 'Subscription successful !',
   basicError: 'Ooops something went wrong...',
 };

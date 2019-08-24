@@ -14,7 +14,7 @@ function* subscribeNewsletterSaga(
   try {
     const { email } = action.payload;
     yield call(SignUpApi.subscribeNewsletter, { email });
-    yield put(ToasterActions.showSuccessMessage(wording.emailSent));
+    yield put(ToasterActions.showSuccessMessage(wording.subscriptionSuccessful));
   } catch (err) {
     yield put(ToasterActions.showErrorMessage(wording.basicError));
   }
