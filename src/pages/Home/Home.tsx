@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { TextInput } from 'react-native';
 import styled from 'styled-components/native';
 import wretch from 'wretch';
+
 import { Button } from '../../components/Button';
 import { wording } from '../../utils/wording';
-import { validate } from '@babel/types';
+import { EMAIL_API_ENDPOINT } from '../../api/config';
 
 export const Home = () => {
   const [email, setEmail] = useState('');
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
   const onValidate = () => {
-    wretch('https://staging.inshallah.com/auth/send-validation-email')
+    wretch(EMAIL_API_ENDPOINT)
       .post({ email })
       .res()
       .then(() => setIsSuccess(true))
