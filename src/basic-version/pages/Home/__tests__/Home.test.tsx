@@ -3,9 +3,9 @@ import 'jest-styled-components';
 import { fireEvent, waitForElement, render } from 'react-native-testing-library';
 import fetchMock from 'fetch-mock';
 
-import { EMAIL_API_ENDPOINT } from '../../../api/config';
+import { EMAIL_API_ENDPOINT } from '../../../../complex-version/api/config';
 import { Home } from '../Home';
-import { wording } from '../../../utils/wording';
+import { wording } from '../../../../utils/wording';
 
 describe('[Page] Home', () => {
   beforeEach(() => {

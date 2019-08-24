@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '../../components/Button';
 import { useDispatch } from 'react-redux';
-import { SignUpActions } from '../../modules/signup/actions';
+import { SignUpActions } from '../modules/signup/actions';
 import { Formik } from 'formik';
 import { FormikInput } from '../../components/Input';
 import { wording } from '../../utils/wording';
@@ -12,7 +12,7 @@ interface EmailValue {
   email: string;
 }
 
-export const HomeFinal = () => {
+export const Home = () => {
   const dispatch = useDispatch();
   const onSubmit = ({ email }: EmailValue) => dispatch(SignUpActions.subscribeNewsletter(email));
 

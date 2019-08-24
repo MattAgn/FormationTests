@@ -2,11 +2,11 @@ import React, { ReactElement } from 'react';
 import { render } from 'react-native-testing-library';
 import { Provider } from 'react-redux';
 
-import { sagaMiddleware } from '../modules/store';
+import { sagaMiddleware } from '../complex-version/modules/store';
 import { Toaster } from '../components/Toaster';
 import { createStore, applyMiddleware } from 'redux';
-import { rootReducer } from '../modules/reducer';
-import watchAll from '../modules/saga';
+import { rootReducer } from '../complex-version/modules/reducer';
+import watchAll from '../complex-version/modules/saga';
 
 export const renderPage = (page: ReactElement) => {
   const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));

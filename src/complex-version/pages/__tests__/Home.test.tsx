@@ -3,9 +3,9 @@ import 'jest-styled-components';
 import { fireEvent, waitForElement } from 'react-native-testing-library';
 import fetchMock from 'fetch-mock';
 
-import { HomeFinal } from '../Home.final';
+import { Home } from '../Home';
 import { renderPage } from '../../../utils/test.helper';
-import { EMAIL_API_ENDPOINT } from '../../../api/config';
+import { EMAIL_API_ENDPOINT } from '../../api/config';
 import { wording } from '../../../utils/wording';
 
 describe('[Page] Home', () => {
@@ -16,7 +16,7 @@ describe('[Page] Home', () => {
   it('should display succesful message on successful subscribe', async () => {
     // Setup
     fetchMock.post(EMAIL_API_ENDPOINT, 200);
-    const { getByPlaceholder, queryByText, getByText } = renderPage(<HomeFinal />);
+    const { getByPlaceholder, queryByText, getByText } = renderPage(<Home />);
     // What the user sees
     const EmailInput = getByPlaceholder(wording.emailPlaceholder);
     const ValidateButton = getByText(wording.validateEmail);
@@ -31,7 +31,7 @@ describe('[Page] Home', () => {
   it('should display error message on failed subscribe', async () => {
     // Setup
     fetchMock.post(EMAIL_API_ENDPOINT, 400);
-    const { getByPlaceholder, queryByText, getByText } = renderPage(<HomeFinal />);
+    const { getByPlaceholder, queryByText, getByText } = renderPage(<Home />);
     // What the user sees
     const EmailInput = getByPlaceholder(wording.emailPlaceholder);
     const ValidateButton = getByText(wording.validateEmail);
