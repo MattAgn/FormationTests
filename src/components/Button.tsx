@@ -19,9 +19,8 @@ const FullWidthTouchableOpacity = styled.TouchableOpacity`
 `;
 
 const ButtonContainer = styled.View`
-  background-color: green;
+  background-color: #00b0ff;
   border-radius: 6;
-  /* text-align: center; */
   padding-vertical: 10;
   align-items: center;
   color: white;

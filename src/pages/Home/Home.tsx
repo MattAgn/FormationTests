@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { TextInput } from 'react-native';
 import styled from 'styled-components/native';
 import wretch from 'wretch';
 
 import { Button } from '../../components/Button';
 import { wording } from '../../utils/wording';
 import { EMAIL_API_ENDPOINT } from '../../api/config';
+import { Container, Card, Title, Input } from '../../components/StyledComponents';
 
 export const Home = () => {
   const [email, setEmail] = useState('');
@@ -21,26 +21,16 @@ export const Home = () => {
 
   return (
     <Container>
-      <Title>{wording.subscribe}</Title>
-      <TextInput placeholder={wording.emailPlaceholder} value={email} onChangeText={setEmail} />
-      <Button title={wording.validateEmail} onPress={onValidate} />
-      {isSuccess && <SuccessMessage>{wording.emailSent}</SuccessMessage>}
-      {isSuccess === false && <ErrorMessage>{wording.basicError}</ErrorMessage>}
+      <Card>
+        <Title>{wording.subscribe}</Title>
+        <Input placeholder={wording.emailPlaceholder} value={email} onChangeText={setEmail} />
+        <Button title={wording.validateEmail} onPress={onValidate} />
+        {isSuccess && <SuccessMessage>{wording.emailSent}</SuccessMessage>}
+        {isSuccess === false && <ErrorMessage>{wording.basicError}</ErrorMessage>}
+      </Card>
     </Container>
   );
 };
-
-const Container = styled.View`
-  flex: 1;
-  padding-top: 30;
-  padding-horizontal: 20;
-  align-items: center;
-`;
-
-const Title = styled.Text`
-  font-size: 20;
-  margin-vertical: 20px;
-`;
 
 const SuccessMessage = styled.Text`
   color: green;
