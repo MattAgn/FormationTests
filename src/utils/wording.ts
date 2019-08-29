@@ -4,4 +4,6 @@ export const wording = {
   validateEmail: 'Validate',
   subscriptionSuccessful: 'Subscription successful !',
   basicError: 'Ooops something went wrong...',
+  about: 'About',
+  aboutTitle: 'About this very awesome newsletter',
 };

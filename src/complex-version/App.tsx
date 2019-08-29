@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { store } from './modules/store';
 import { Home } from './pages/Home';
 import { Toaster } from '../components/Toaster';
+import { AppContainer } from '../navigation';
 
 export const App = () => (
   <Provider store={store}>
-    <Home />
+    <AppContainer />
     <Toaster />
   </Provider>
 );
