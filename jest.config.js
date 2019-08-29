@@ -18,4 +18,5 @@ module.exports = {
   cacheDirectory: '.jest/cache',
   transformIgnorePatterns: ['node_modules/@bam.tech/react-native-text-input'],
   setupFiles: ['./src/utils/test.setup.tsx'],
+  testEnvironment: 'jsdom',
 };
