@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-import { Button } from '../../components/Button';
+import { Button } from '../../../components/Button';
 import { useDispatch } from 'react-redux';
-import { SignUpActions } from '../modules/signup/actions';
+import { SignUpActions } from '../../modules/signup/actions';
 import { Formik } from 'formik';
-import { FormikInput } from '../../components/Input';
-import { wording } from '../../utils/wording';
-import { Card, Container, Title } from '../../components/StyledComponents';
+import { FormikInput } from '../../../components/Input';
+import { wording } from '../../../utils/wording';
+import { Card, Container, Title } from '../../../components/StyledComponents';
+import { NavigationScreenProps } from 'react-navigation';
+import { Routes } from '../../navigation/routes';
 
 interface EmailValue {
   email: string;
 }
 
-export const Home = () => {
+export const Home: FunctionComponent<NavigationScreenProps> = ({ navigation }) => {
   const dispatch = useDispatch();
   const onSubmit = ({ email }: EmailValue) => dispatch(SignUpActions.subscribeNewsletter(email));
+  const onAbout = () => navigation.navigate(Routes.About);
 
   return (
     <Container>
@@ -31,6 +34,7 @@ export const Home = () => {
               //@ts-ignore */}
               <FormikInput placeholder={wording.emailPlaceholder} name="email" />
               <Button title={wording.validateEmail} onPress={handleSubmit} />
+              <Button title={wording.about} onPress={onAbout} />
             </>
           )}
         />

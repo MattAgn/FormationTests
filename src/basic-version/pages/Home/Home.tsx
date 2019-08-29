@@ -7,7 +7,7 @@ import { wording } from '../../../utils/wording';
 import { EMAIL_API_ENDPOINT } from '../../../complex-version/api/config';
 import { Container, Card, Title, Input } from '../../../components/StyledComponents';
 import { NavigationScreenProps } from 'react-navigation';
-import { Routes } from '../../../navigation';
+import { Routes } from '../../../complex-version/navigation/routes';
 
 export const Home: FunctionComponent<NavigationScreenProps> = ({ navigation }) => {
   const [email, setEmail] = useState('');

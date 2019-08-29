@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { store } from './modules/store';
 import { Toaster } from '../components/Toaster';
-import { AppContainer } from '../navigation';
+import { AppContainer } from './navigation/stack';
 
 export const App = () => (
   <Provider store={store}>

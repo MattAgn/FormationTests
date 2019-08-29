@@ -1,11 +1,7 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import { Home } from '../basic-version/pages/Home/Home';
-import { About } from '../basic-version/pages/About/About';
-
-export enum Routes {
-  Home = 'Home',
-  About = 'About',
-}
+import { Home } from '../../basic-version/pages/Home/Home';
+import { About } from '../../basic-version/pages/About/About';
+import { Routes } from './routes';
 
 const stackNav = createStackNavigator({
   [Routes.Home]: {

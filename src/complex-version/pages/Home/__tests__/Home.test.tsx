@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  fireEvent,
-  waitForElement,
-  render,
-  flushMicrotasksQueue,
-} from 'react-native-testing-library';
+import { fireEvent, waitForElement, flushMicrotasksQueue } from 'react-native-testing-library';
 import fetchMock from 'fetch-mock';
 
-import { EMAIL_API_ENDPOINT } from '../../../../complex-version/api/config';
 import { Home } from '../Home';
+import { renderPage, getPropsWithNavigation } from '../../../../utils/test.helper';
+import { EMAIL_API_ENDPOINT } from '../../../api/config';
 import { wording } from '../../../../utils/wording';
-import { getPropsWithNavigation } from '../../../../utils/test.helper';
-import { Routes } from '../../../../complex-version/navigation/routes';
+import { Routes } from '../../../navigation/routes';
 
 describe('[Page] Home', () => {
   const props = getPropsWithNavigation();
