@@ -4,7 +4,7 @@ import { Button } from '../../../components/Button';
 import { wording } from '../../../utils/wording';
 import { Container, Card, Title, Input } from '../../../components/StyledComponents';
 import { NavigationScreenProps } from 'react-navigation';
-import { Routes } from '../../../complex-version/navigation/routes';
+import { Routes } from '../../navigation/routes';
 
 export const About: FunctionComponent<NavigationScreenProps> = ({ navigation }) => (
   <Container>
