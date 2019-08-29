@@ -1,4 +1,5 @@
 {
   "name": "FormationTests",
-  "displayName": "FormationTests"
+  "displayName": "FormationTests",
+  "react-native": "0.60.3"
 }
