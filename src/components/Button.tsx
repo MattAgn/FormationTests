@@ -24,7 +24,7 @@ const ButtonContainer = styled.View`
   padding-vertical: 10;
   align-items: center;
   color: white;
-  margin-vertical: 20;
+  margin-vertical: 10;
 `;
 
 const ButtonText = styled.Text`
