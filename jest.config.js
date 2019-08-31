@@ -17,6 +17,6 @@ module.exports = {
   testPathIgnorePatterns: ['\\.snap$', '<rootDir>/node_modules/', '<rootDir>/.history/'],
   cacheDirectory: '.jest/cache',
   transformIgnorePatterns: ['node_modules/@bam.tech/react-native-text-input'],
-  setupFiles: ['./src/utils/test.setup.tsx'],
+  setupFiles: ['./src/utils/tests/setup.tsx'],
   testEnvironment: 'jsdom',
 };

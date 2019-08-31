@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { TouchableOpacityProps } from 'react-native';
-import styled from 'styled-components/native';
+import styled from '../lib/styled-components';
 
 interface Props extends TouchableOpacityProps {
   title: string;
@@ -19,7 +19,7 @@ const FullWidthTouchableOpacity = styled.TouchableOpacity`
 `;
 
 const ButtonContainer = styled.View`
-  background-color: #00b0ff;
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 6;
   padding-vertical: 10;
   align-items: center;
