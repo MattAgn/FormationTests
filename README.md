@@ -91,3 +91,5 @@ You can find below example code on how to test features with :
 - [navigation]() -> TODO
 - [native code]() -> TODO
 - [components outside your page]() -> TODO
+
+**Be careful with circular imports ! It messed with us big time on InshAllah !**
