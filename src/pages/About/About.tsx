@@ -16,11 +16,3 @@ export const About: FunctionComponent<NavigationScreenProps> = ({ navigation }) 
     </Card>
   </Container>
 );
-
-const SuccessMessage = styled.Text`
-  color: green;
-`;
-
-const ErrorMessage = styled.Text`
-  color: red;
-`;

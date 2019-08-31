@@ -11,8 +11,10 @@ import { IAppState } from '../../modules/types';
 import { createInitialiasedStore } from './mockStore';
 import { storeManager } from '../../modules/storeManager';
 
-export const renderWithTheme = (page: ReactElement) =>
-  render(<ThemeProvider theme={theme}>{page}</ThemeProvider>);
+export const renderWithTheme = (page: ReactElement) => {
+  console.log(theme);
+  return render(<ThemeProvider theme={theme}>{page}</ThemeProvider>);
+};
 
 export const renderPage = (page: ReactElement, initialState?: Partial<IAppState>) => {
   storeManager.store = createInitialiasedStore(initialState);
