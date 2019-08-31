@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 import ToasterMessage from 'react-native-toaster';
 import { useSelector } from 'react-redux';
 
-import { toasterMessageSelector } from '../complex-version/modules/toaster/selectors';
+import { toasterMessageSelector } from '../modules/toaster/selectors';
 
 export const Toaster: FunctionComponent<{}> = () => {
   const toasterMessage = useSelector(toasterMessageSelector);

@@ -6,7 +6,7 @@ import { SignUpApi } from '../../api/signup';
 import { TSignUpActionObjectTypes } from './actions';
 import { SignUpActionTypes } from './types';
 import { ToasterActions } from '../toaster/actions';
-import { wording } from '../../../utils/wording';
+import { wording } from '../../utils/wording';
 
 function* subscribeNewsletterSaga(
   action: ActionsOfType<TSignUpActionObjectTypes, SignUpActionTypes.SUBSCRIBE_NEWSLETTER>

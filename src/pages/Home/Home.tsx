@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
 
-import { Button } from '../../../components/Button';
+import { Button } from '../../components/Button';
 import { useDispatch } from 'react-redux';
 import { SignUpActions } from '../../modules/signup/actions';
 import { Formik } from 'formik';
-import { FormikInput } from '../../../components/Input';
-import { wording } from '../../../utils/wording';
-import { Card, Container, Title } from '../../../components/StyledComponents';
+import { FormikInput } from '../../components/Input';
+import { wording } from '../../utils/wording';
+import { Card, Container, Title } from '../../components/StyledComponents';
 import { NavigationScreenProps } from 'react-navigation';
 import { Routes } from '../../navigation/routes';
 

@@ -3,9 +3,9 @@ import { fireEvent, waitForElement, flushMicrotasksQueue } from 'react-native-te
 import fetchMock from 'fetch-mock';
 
 import { Home } from '../Home';
-import { renderPage, getPropsWithNavigation } from '../../../../utils/test.helper';
+import { renderPage, getPropsWithNavigation } from '../../../utils/test.helper';
 import { EMAIL_API_ENDPOINT } from '../../../api/config';
-import { wording } from '../../../../utils/wording';
+import { wording } from '../../../utils/wording';
 import { Routes } from '../../../navigation/routes';
 
 describe('[Page] Home', () => {
