@@ -86,7 +86,7 @@ You can find below example code on how to test features with :
 - [formik](./src/pages/Home/__tests__/Home.test.tsx)
 - [inputs](./src/pages/Home/__tests__/Home.test.tsx) -> Careful, getByPlaceholder might not work depending on the input you use. I don't think with react-native-paper for instance
 - [external api calls](./src/pages/Home/__tests__/Home.test.tsx) -> TODO: make a more complte example with a return response
-- [styled-components (or any styling library)](./src/pages/Home/__tests__/Home.test.tsx) -> check [renderWithTheme method](./src/utils/tests/helpers.tsx), don't forget to import `jest-styled-components` in each test file
+- [styled-components (or any styling library)](./src/pages/Home/__tests__/Home.test.tsx) -> check [renderWithTheme method](./src/utils/tests/helpers.tsx), don't forget to import `jest-styled-components` in each test file. WARNING : NOT WORKING YET WITH THEME PROVIDER !! TODO: to fix
 - [components outside your page](./src/pages/Home/__tests__/Home.test.tsx) -> check [renderPage method](./src/utils/tests/helpers.tsx) with the Toaster
 - [internal navigation](./src/pages/About/__tests__/About.test.tsx)
 - **timers** -> TODO

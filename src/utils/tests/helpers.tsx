@@ -11,7 +11,6 @@ import { createInitialiasedStore, sagaMiddlewareTest } from './mockStore';
 import { storeManager } from '../../modules/storeManager';
 
 export const renderWithTheme = (page: ReactElement) => {
-  console.log(theme);
   return render(<ThemeProvider theme={theme}>{page}</ThemeProvider>);
 };
 

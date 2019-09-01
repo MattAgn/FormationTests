@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import styled from 'styled-components/native';
 import { Button } from '../../components/Button';
 import { wording } from '../../utils/wording';
 import { Container, Card, Title, Input } from '../../components/StyledComponents';

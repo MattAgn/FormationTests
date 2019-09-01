@@ -1,10 +1,12 @@
 import styled from '../lib/styled-components';
+import { View } from 'react-native';
+import { theme } from '../utils/theme';
 
-export const Container = styled.View`
+export const Container = styled(View)`
   flex: 1;
   padding-horizontal: 20;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.primaryDark};
+  background-color: ${theme.colors.primaryDark};
   justify-content: center;
 `;
 

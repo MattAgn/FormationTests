@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, waitForElement, flushMicrotasksQueue } from 'react-native-testing-library';
+import { fireEvent, waitForElement } from 'react-native-testing-library';
 import fetchMock from 'fetch-mock';
 import 'jest-styled-components';
 
@@ -10,7 +10,9 @@ import { wording } from '../../../utils/wording';
 
 describe('[Page] Home', () => {
   const props = getPropsWithNavigation();
-  const mockPostSubscribe = (status: number) => fetchMock.post(EMAIL_API_ENDPOINT, status);
+  const mockPostSubscribe = (status: number) => {
+    fetchMock.post(EMAIL_API_ENDPOINT, status);
+  };
 
   beforeEach(() => {
     fetchMock.reset();
